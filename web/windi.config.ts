@@ -16,7 +16,8 @@ export default defineConfig({
           800: '#2a2e3a',
           900: '#2e323e',
         },
-        "dark-fg": colors.white
+        "dark-fg": colors.white,
+		"rizin": "#fad000"
       },
       stroke: (theme) => theme('colors'),
       fill: (theme) => theme('colors'),

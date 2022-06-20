@@ -15,8 +15,8 @@
         justify-center
       "
     >
-      <div class="flex md:bg-lime-500 md:dark:bg-lime-900 md:w-3/5 justify-center items-center">
-        <img class="w-48 h-48" src="../assets/logo.svg?url" />
+      <div class="flex md:bg-rizin md:dark:bg-rizin md:w-3/5 justify-center items-center">
+        <img class="w-48" src="../assets/logo.svg?url" />
       </div>
       <div class="flex flex-col my-8 md:w-2/5 p-4 items-center justify-center">
         <h1 class="text-xl text-gray-600 dark:text-dark-fg">Welcome to Woodpecker</h1>
