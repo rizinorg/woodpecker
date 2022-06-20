@@ -1,0 +1,21 @@
+FROM docker.io/golang:alpine AS build
+
+RUN apk --no-cache add nodejs make git build-base binutils-gold
+RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh - # TODO: use pnpm from alpine repos when available
+WORKDIR /src
+COPY . .
+RUN . "$HOME/.shrc" && \
+  if [ "`uname -m`" = "aarch64" ]; then export TARGETARCH=arm64; fi && \
+  make build-server
+
+FROM alpine:3.19
+RUN apk add -U --no-cache ca-certificates
+ENV GODEBUG=netdns=go
+ENV WOODPECKER_DATABASE_DATASOURCE=/var/lib/woodpecker/woodpecker.sqlite
+ENV WOODPECKER_DATABASE_DRIVER=sqlite3
+ENV XDG_CACHE_HOME=/var/lib/woodpecker
+EXPOSE 8000 9000 80 443
+
+COPY --from=build /src/dist/woodpecker-server /bin/
+
+ENTRYPOINT ["/bin/woodpecker-server"]

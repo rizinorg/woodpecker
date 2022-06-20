@@ -1,0 +1,7 @@
+FROM docker.io/golang:alpine AS build
+
+RUN apk --no-cache add nodejs make git build-base binutils-gold
+RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh - # TODO: use pnpm from alpine repos when available
+ENV PATH="/root/.local/share/pnpm:${PATH}"
+
+ENTRYPOINT ["/bin/ash"]

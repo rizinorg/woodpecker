@@ -31,6 +31,7 @@ web/.env
 
 ### Docker ###
 docker-compose.yml
+docker-compose.dev.yml
 
 ### Other ##
 # runetime or build relicts
