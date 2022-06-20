@@ -3,7 +3,7 @@
     <div class="flex flex-row border-b mb-4 pb-4 items-center dark:border-gray-600">
       <div class="ml-2">
         <h1 class="text-xl text-gray-500">Secrets</h1>
-        <p class="text-sm text-gray-400 dark:text-gray-600">
+        <p class="text-sm text-gray-400 dark:text-dark-fg">
           Secrets can be passed to individual pipeline steps at runtime as environmental variables.
           <DocsLink url="docs/usage/secrets" />
         </p>
@@ -25,7 +25,7 @@
           <span
             v-for="event in secret.event"
             :key="event"
-            class="bg-gray-400 dark:bg-dark-200 dark:text-gray-500 text-white rounded-md mx-1 py-1 px-2 text-sm"
+            class="bg-gray-400 dark:bg-dark-200 dark:text-dark-fg text-white rounded-md mx-1 py-1 px-2 text-sm"
             >{{ event }}</span
           >
         </div>

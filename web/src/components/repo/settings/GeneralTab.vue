@@ -12,7 +12,7 @@
           placeholder="By default: .woodpecker/*.yml -> .woodpecker.yml -> .drone.yml"
         />
         <template #description>
-          <p class="text-sm text-gray-400 dark:text-gray-600">
+          <p class="text-sm text-gray-400 dark:text-dark-fg">
             Path to your pipeline config (for example
             <span class="bg-gray-300 dark:bg-dark-100 rounded-md px-1">my/path/</span>). Folders should end with a
             <span class="bg-gray-300 dark:bg-dark-100 rounded-md px-1">/</span>.

@@ -12,7 +12,7 @@
       rounded-full
       bg-transparent
       hover:bg-gray-200 hover:text-gray-700
-      dark:hover:bg-gray-600 dark:text-gray-500 dark:hover:text-gray-700
+      dark:hover:bg-gray-600 dark:text-dark-fg dark:hover:text-dark-fg
       cursor-pointer
       transition-all
       duration-150

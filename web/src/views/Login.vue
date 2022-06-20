@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-full h-full justify-center items-center">
-    <div v-if="errorMessage" class="bg-red-400 text-white dark:text-gray-500 p-4 rounded-md text-lg">
+    <div v-if="errorMessage" class="bg-red-400 text-white dark:text-dark-fg p-4 rounded-md text-lg">
       {{ errorMessage }}
     </div>
 
@@ -19,7 +19,7 @@
         <img class="w-48 h-48" src="../assets/logo.svg?url" />
       </div>
       <div class="flex flex-col my-8 md:w-2/5 p-4 items-center justify-center">
-        <h1 class="text-xl text-gray-600 dark:text-gray-500">Welcome to Woodpecker</h1>
+        <h1 class="text-xl text-gray-600 dark:text-dark-fg">Welcome to Woodpecker</h1>
         <Button class="mt-4" @click="doLogin">Login</Button>
       </div>
     </div>

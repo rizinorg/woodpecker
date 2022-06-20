@@ -20,7 +20,7 @@
         text-gray-600
         placeholder-gray-400
         focus:outline-none focus:border-blue-400
-        dark:placeholder-gray-600 dark:text-gray-500
+        dark:placeholder-dark-fg-600 dark:text-dark-fg
       "
       :type="type"
       :placeholder="placeholder"
@@ -34,7 +34,7 @@
         text-gray-600
         placeholder-gray-400
         focus:outline-none focus:border-blue-400
-        dark:placeholder-gray-600 dark:text-gray-500
+        dark:placeholder-dark-fg-600 dark:text-dark-fg
       "
       :placeholder="placeholder"
       :rows="lines"

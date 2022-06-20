@@ -1,9 +1,9 @@
 <template>
   <div class="flex shadow-lg bg-lime-600 text-neutral-content px-2 md:px-8 py-2 dark:bg-dark-gray-900">
-    <div class="flex text-white dark:text-gray-500 items-center">
+    <div class="flex text-white dark:text-dark-fg items-center">
       <router-link :to="{ name: 'home' }" class="relative">
-        <img class="-mt-3 w-8" src="../../../assets/logo.svg?url" />
-        <span class="absolute -bottom-4 text-xs">{{ version }}</span>
+        <img class="w-12" src="../../../assets/logo.svg?url" />
+        <!--<span class="absolute -bottom-4 text-xs">{{ version }}</span>-->
       </router-link>
       <router-link
         v-if="user"
@@ -14,7 +14,7 @@
         <span class="hidden md:flex">Repositories</span>
       </router-link>
     </div>
-    <div class="flex ml-auto items-center space-x-4 text-white dark:text-gray-500">
+    <div class="flex ml-auto items-center space-x-4 text-white dark:text-dark-fg">
       <a
         :href="docsUrl"
         target="_blank"
@@ -23,7 +23,7 @@
       >
       <IconButton
         :icon="darkMode ? 'dark' : 'light'"
-        class="!text-white !dark:text-gray-500"
+        class="!text-white !dark:text-dark-fg"
         @click="darkMode = !darkMode"
       />
       <router-link v-if="user" :to="{ name: 'user' }">

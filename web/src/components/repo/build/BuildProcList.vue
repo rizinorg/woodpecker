@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full md:w-3/12 text-gray-200 dark:text-gray-400 bg-gray-600 dark:bg-dark-gray-800">
+  <div class="flex flex-col w-full md:w-3/12 text-gray-200 dark:text-dark-fg bg-gray-600 dark:bg-dark-gray-800">
     <div
       class="
         flex
@@ -12,6 +12,7 @@
         text-gray-500
         border-b-1
         dark:border-dark-gray-600
+		dark:text-dark-fg
       "
     >
       <div class="flex space-x-1 items-center flex-shrink-0">

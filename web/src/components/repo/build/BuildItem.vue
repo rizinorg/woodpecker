@@ -24,7 +24,7 @@
 
       <div class="w-full md:w-auto md:mx-4 flex items-center min-w-0">
         <span
-          class="text-gray-600 <md:underline dark:text-gray-500 whitespace-nowrap overflow-hidden overflow-ellipsis"
+          class="text-gray-600 <md:underline dark:text-dark-fg whitespace-nowrap overflow-hidden overflow-ellipsis"
           >{{ message }}</span
         >
       </div>

@@ -2,7 +2,7 @@
   <FluidContainer class="flex flex-col">
     <div class="flex flex-row border-b mb-4 pb-4 items-center dark:border-dark-200">
       <IconButton :to="{ name: 'repos' }" icon="back" />
-      <h1 class="text-xl ml-2 text-gray-500">Add repository</h1>
+      <h1 class="text-xl ml-2 text-gray-500 dark:text-dark-fg">Add repository</h1>
       <TextField v-model="search" class="w-auto ml-auto" placeholder="Search ..." />
       <Button
         class="ml-auto"
@@ -21,8 +21,8 @@
         :clickable="repo.active"
         @click="repo.active && $router.push({ name: 'repo', params: { repoOwner: repo.owner, repoName: repo.name } })"
       >
-        <span class="text-gray-500">{{ repo.full_name }}</span>
-        <span v-if="repo.active" class="ml-auto text-gray-500">Already enabled</span>
+        <span class="text-gray-500 dark:text-dark-fg">{{ repo.full_name }}</span>
+        <span v-if="repo.active" class="ml-auto text-gray-500 dark:text-dark-fg">Already enabled</span>
         <Button
           v-if="!repo.active"
           class="ml-auto"

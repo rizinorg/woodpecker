@@ -9,21 +9,21 @@
     </div>
 
     <div v-for="logLine in logLines" :key="logLine.pos" class="flex items-center">
-      <div class="text-gray-500 text-sm w-4">{{ (logLine.pos || 0) + 1 }}</div>
+      <div class="text-gray-500 dark:text-dark-fg text-sm w-4">{{ (logLine.pos || 0) + 1 }}</div>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="mx-4 text-gray-200 dark:text-gray-400" v-html="logLine.out" />
-      <div class="ml-auto text-gray-500 text-sm">{{ logLine.time || 0 }}s</div>
+      <div class="mx-4 text-gray-200 dark:text-dark-fg" v-html="logLine.out" />
+      <div class="ml-auto text-gray-500 dark:text-dark-fg text-sm">{{ logLine.time || 0 }}s</div>
     </div>
-    <div v-if="proc?.end_time !== undefined" class="text-gray-500 text-sm mt-4 ml-8">
+    <div v-if="proc?.end_time !== undefined" class="text-gray-500 dark:text-dark-fg text-sm mt-4 ml-8">
       exit code {{ proc.exit_code }}
     </div>
 
-    <div class="text-gray-300 mx-auto">
+    <div class="text-gray-300 dark:text-dark-fg mx-auto">
       <span v-if="proc?.error" class="text-red-500">{{ proc.error }}</span>
-      <span v-else-if="proc?.state === 'skipped'" class="text-orange-300 dark:text-orange-800"
+      <span v-else-if="proc?.state === 'skipped'" class="text-orange-300 dark:text-orange-300"
         >This step has been canceled.</span
       >
-      <span v-else-if="!proc?.start_time" class="dark:text-gray-500">This step hasn't started yet.</span>
+      <span v-else-if="!proc?.start_time" class="dark:text-dark-fg">This step hasn't started yet.</span>
     </div>
   </div>
 </template>

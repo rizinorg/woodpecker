@@ -62,7 +62,7 @@ export default defineComponent({
 
 <style scoped>
 .box {
-  @apply bg-gray-400 p-2 rounded-md text-white break-words dark:bg-dark-300 dark:text-gray-500;
+  @apply bg-gray-400 p-2 rounded-md text-white break-words dark:bg-dark-300 dark:text-dark-fg;
   white-space: pre-wrap;
 }
 </style>
