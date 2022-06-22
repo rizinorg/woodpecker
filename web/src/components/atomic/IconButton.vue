@@ -6,7 +6,6 @@
       flex
       items-center
       justify-center
-      text-color
       px-1
       py-1
       rounded-full

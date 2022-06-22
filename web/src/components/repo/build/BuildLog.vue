@@ -8,7 +8,7 @@
       <Icon name="close" class="ml-auto" />
     </div>
 
-    <div class="flex flex-grow flex-col bg-gray-300 dark:bg-dark-gray-700 md:m-2 md:mt-0 md:rounded-md overflow-hidden">
+    <div class="flex flex-grow flex-col bg-gray-300 dark:bg-dark-gray-700 md:ml-2 md:mt-0 md:rounded-tl-md overflow-hidden">
       <div v-show="loadedLogs" class="w-full flex-grow p-2">
         <div id="terminal" class="w-full h-full" />
       </div>
@@ -23,7 +23,7 @@
       <div
         v-if="proc?.end_time !== undefined"
         :class="proc.exit_code == 0 ? 'dark:text-lime-400 text-lime-600' : 'dark:text-red-400 text-red-600'"
-        class="w-full bg-gray-400 dark:bg-dark-gray-800 text-md p-4"
+        class="w-full py-2 bg-gray-400 dark:bg-dark-gray-800 text-sm p-4"
       >
         {{ $t('repo.build.exit_code', { exitCode: proc.exit_code }) }}
       </div>
@@ -95,6 +95,7 @@ export default defineComponent({
       new Terminal({
         convertEol: true,
         disableStdin: true,
+        fontSize: 11,
         theme: {
           cursor: 'transparent',
         },

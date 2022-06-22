@@ -29,7 +29,7 @@
             >{{ event }}</span
           >
         </div>
-        <IconButton icon="edit" class="ml-2 w-8 h-8" @click="selectedSecret = secret" />
+        <IconButton icon="edit" class="ml-2 w-8 h-8 text-color" @click="selectedSecret = secret" />
         <IconButton
           icon="trash"
           class="ml-2 w-8 h-8 hover:text-red-400 hover:dark:text-red-500"
