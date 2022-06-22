@@ -27,7 +27,7 @@
     <div v-if="!selectedRegistry" class="space-y-4 text-color">
       <ListItem v-for="registry in registries" :key="registry.id" class="items-center">
         <span>{{ registry.address }}</span>
-        <IconButton icon="edit" class="ml-auto w-8 h-8" @click="selectedRegistry = registry" />
+        <IconButton icon="edit" class="ml-auto w-8 h-8 text-color" @click="selectedRegistry = registry" />
         <IconButton
           icon="trash"
           class="w-8 h-8 hover:text-red-400 hover:dark:text-red-500"
