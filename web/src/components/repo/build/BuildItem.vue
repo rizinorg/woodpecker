@@ -7,8 +7,8 @@
           'bg-yellow-400 dark:bg-dark-200': build.status === 'pending',
           'bg-red-400 dark:bg-red-800': buildStatusColors[build.status] === 'red',
           'bg-gray-600 dark:bg-gray-500': buildStatusColors[build.status] === 'gray',
-          'bg-lime-400 dark:bg-lime-900': buildStatusColors[build.status] === 'green',
-          'bg-blue-400 dark:bg-blue-900': buildStatusColors[build.status] === 'blue',
+          'bg-lime-400 dark:bg-lime-600': buildStatusColors[build.status] === 'green',
+          'bg-blue-400 dark:bg-orange-400': buildStatusColors[build.status] === 'blue',
         }"
       />
       <div class="w-8 flex flex-wrap justify-between items-center h-full">

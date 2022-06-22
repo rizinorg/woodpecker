@@ -2,7 +2,7 @@
   <template v-if="build && repo">
     <FluidContainer class="flex flex-col min-w-0 dark:border-gray-600">
       <div class="flex mb-2 items-center <md:flex-wrap">
-        <IconButton icon="back" class="flex-shrink-0" @click="goBack" />
+        <IconButton icon="back" class="flex-shrink-0 text-color" @click="goBack" />
 
         <h1
           class="
