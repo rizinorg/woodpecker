@@ -222,9 +222,19 @@ func PostHook(c *gin.Context) {
 		return
 	}
 
+	// Always disallow builds (prs) from repos other than the registered
+	if tmpPipeline.CloneURL != repo.Clone {
+		msg := "ignoring hook: HEAD is on another repo"
+		log.Debug().Str("repo", repo.FullName).Str("other_remote", tmpPipeline.CloneURL).Str("repo_clone", repo.Clone).Msg(msg)
+		c.String(http.StatusNoContent, msg)
+		return
+	}
+
 	//
 	// 6. Finally create a pipeline
 	//
+
+	log.Info().Interface("tmpPipeline", tmpPipeline).Interface("repo", repo).Msg("dispatching build from hook");
 
 	pl, err := pipeline.Create(c, _store, repo, tmpPipeline)
 	if err != nil {
