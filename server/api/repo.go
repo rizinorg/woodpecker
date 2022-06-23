@@ -50,14 +50,11 @@ func PostRepo(c *gin.Context) {
 
 	repo.IsActive = true
 	repo.UserID = user.ID
-	repo.AllowPull = true
+	repo.AllowPull = false
 	repo.CancelPreviousPipelineEvents = server.Config.Pipeline.DefaultCancelPreviousPipelineEvents
 
 	if repo.Visibility == "" {
-		repo.Visibility = model.VisibilityPublic
-		if repo.IsSCMPrivate {
-			repo.Visibility = model.VisibilityPrivate
-		}
+		repo.Visibility = model.VisibilityPrivate
 	}
 
 	if repo.Timeout == 0 {
