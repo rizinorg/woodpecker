@@ -140,10 +140,20 @@ func PostHook(c *gin.Context) {
 
 	if tmpBuild.Event == model.EventPull && !repo.AllowPull {
 		msg := "ignoring hook: pull requests are disabled for this repo in woodpecker"
-		log.Debug().Str("repo", repo.FullName).Msg(msg)
+		log.Info().Str("repo", repo.FullName).Msg(msg)
 		c.String(http.StatusNoContent, msg)
 		return
 	}
+
+	// Always disallow builds (prs) from repos other than the registered
+	if tmpBuild.Remote != repo.Clone {
+		msg := "ignoring hook: HEAD is on another repo"
+		log.Debug().Str("repo", repo.FullName).Str("other_remote", tmpBuild.Remote).Str("repo_clone", repo.Clone).Msg(msg)
+		c.String(http.StatusNoContent, msg)
+		return
+	}
+
+	log.Info().Interface("tmpBuild", tmpBuild).Interface("repo", repo).Msg("dispatching build from hook");
 
 	build, err := pipeline.Create(c, _store, repo, tmpBuild)
 	if err != nil {
