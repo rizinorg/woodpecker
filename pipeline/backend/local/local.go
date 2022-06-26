@@ -94,9 +94,16 @@ func (e *local) Exec(ctx context.Context, proc *types.Step) error {
 // Wait for the pipeline step to complete and returns
 // the completion results.
 func (e *local) Wait(context.Context, *types.Step) (*types.State, error) {
+	err := e.cmd.Wait()
+	ExitCode := 0
+	if eerr, ok := err.(*exec.ExitError); ok {
+		ExitCode = eerr.ExitCode()
+		err = nil
+	}
 	return &types.State{
 		Exited: true,
-	}, e.cmd.Wait()
+		ExitCode: ExitCode,
+	}, err
 }
 
 // Tail the pipeline step logs.
