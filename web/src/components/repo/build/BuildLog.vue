@@ -99,6 +99,8 @@ export default defineComponent({
         theme: {
           cursor: 'transparent',
         },
+        rendererType: 'dom',
+        scrollback: 9999999
       }),
     );
     const fitAddon = ref(new FitAddon());
@@ -137,8 +139,8 @@ export default defineComponent({
         const logs = await apiClient.getLogs(repo.value.owner, repo.value.name, build.value.number, proc.value.pid);
         term.value.write(
           logs
-            .slice(Math.max(logs.length, 0) - 300, logs.length) // TODO: think about way to support lazy-loading more than last 300 logs (#776)
-            .map((line) => `${(line.pos || 0).toString().padEnd(logs.length.toString().length)}  ${line.out}`)
+            .slice(Math.max(logs.length, 0) - 10000, logs.length) // TODO: think about way to support lazy-loading more than last 300 logs (#776)
+            .map((line) => line.out)
             .join(''),
         );
         loadedLogs.value = true;
