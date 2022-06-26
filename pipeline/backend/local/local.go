@@ -62,7 +62,7 @@ func (e *local) Exec(ctx context.Context, proc *types.Step) error {
 		Command = append(Command, "plugin-git")
 	} else {
 		// Use "image name" as run command
-		Command = append(Command, proc.Image[18:len(proc.Image)-7])
+		Command = append(Command, proc.Image)
 		Command = append(Command, "-c")
 
 		// Decode script and delete initial lines
@@ -72,7 +72,7 @@ func (e *local) Exec(ctx context.Context, proc *types.Step) error {
 	}
 
 	// Prepare command
-	e.cmd = exec.CommandContext(ctx, "/bin/env", Command...)
+	e.cmd = exec.CommandContext(ctx, "/usr/bin/env", Command...)
 
 	// Prepare working directory
 	if proc.Image == constant.DefaultCloneImage {
