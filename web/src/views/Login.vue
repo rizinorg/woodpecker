@@ -7,7 +7,7 @@
       class="flex flex-col w-full overflow-hidden bg-wp-background-100 shadow border border-wp-background-400 dark:bg-wp-background-200 md:m-8 md:rounded-md md:flex-row md:w-3xl md:h-sm"
     >
       <div class="flex justify-center items-center bg-wp-primary-200 dark:bg-wp-primary-300 min-h-48 md:w-3/5">
-        <WoodpeckerLogo preserveAspectRatio="xMinYMin slice" class="w-30 h-30 md:w-48 md:h-48" />
+        <WoodpeckerLogo class="w-30 h-30 md:w-48 md:h-48" />
       </div>
       <div class="flex justify-center items-center flex-col md:w-2/5 min-h-48 gap-4 text-center">
         <h1 class="text-xl text-wp-text-100">{{ $t('welcome') }}</h1>
